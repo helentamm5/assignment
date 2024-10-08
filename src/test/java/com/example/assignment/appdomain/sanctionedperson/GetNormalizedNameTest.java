@@ -32,7 +32,7 @@ class GetNormalizedNameTest {
 
     @Test
     void execute_withEnglishNoiseWords_returnsLowercasedNamePartsAlphabeticallyOrderedAndNoiseWordsRemoved() {
-        String result = useCase.execute(GetNormalizedName.Request.of("Osama The And Bin Laden"));
+        String result = useCase.execute(GetNormalizedName.Request.of("Osama The mr dr mrs miss to an and And Bin Laden"));
 
         assertThat(result).isEqualTo("bin laden osama");
     }
