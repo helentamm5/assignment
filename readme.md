@@ -9,20 +9,27 @@
 - Using Java 17
 - Using Gradle
 - Using H2 database
+
+Compile the project using `gradle assemble`
+Run the application with gradle task `gradle bootRun`
+
+## Database
+
+- **Driver Class**: org.h2.Driver
+- **JDBC URL**: jdbc:h2:mem:testdb
+- **User Name**: sa
+- **Password**: password
 - H2 database console URL:
   ```sh 
   http://localhost:8080/h2-console
   ```
-
-Compile the project using `gradle assemble`
-Run the application with gradle task `gradle bootRun` 
 
 ## REST
 
 ### 1. Validate Sanctioned Person Name
 **POST** `http://localhost:8080/api/sanctioned-person/check`
 
-**Description**: Validates if the provided name matches any sanctioned persons.
+**Description**: Validates if the provided name matches any name in the sanctioned persons list
 
 **Sample Request Body**:
 ```json
@@ -60,9 +67,4 @@ Run the application with gradle task `gradle bootRun`
 
 **Description**: Deletes sanctioned person
 
-## Database
 
-- **Driver Class**: org.h2.Driver
-- **JDBC URL**: jdbc:h2:mem:testdb
-- **User Name**: sa
-- **Password**: password
